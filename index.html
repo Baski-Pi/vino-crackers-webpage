@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vino Crackers | Premium Fireworks</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo">
+                <h1>VINO <span class="highlight">CRACKERS</span></h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#shop">Quick Order</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-toggle">
+                <span class="material-icons">menu</span>
+            </div>
+            <div class="header-cart-icon">
+                <span class="material-icons">shopping_cart</span>
+                <span id="header-cart-total">₹0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-slider">
+            <!-- Slides will be injected here or hardcoded for simplicity initially -->
+            <div class="slide active"
+                style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1498931299472-f7a63a5a1cfa?auto=format&fit=crop&q=80');">
+                <div class="hero-content">
+                    <h2>Celebrate with a Bang!</h2>
+                    <p>Flat 40% OFF on all Gift Boxes</p>
+                    <a href="#shop" class="btn btn-primary">Order Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content: Quick Order -->
+    <main class="container main-layout" id="shop">
+
+        <!-- Left Column: Products -->
+        <section class="product-section">
+            <div class="category-filters">
+                <button class="filter-btn active" data-category="all">All Items</button>
+                <button class="filter-btn" data-category="gift-boxes">Gift Boxes</button>
+                <button class="filter-btn" data-category="sparklers">Sparklers</button>
+                <button class="filter-btn" data-category="flower-pots">Flower Pots</button>
+                <button class="filter-btn" data-category="ground-chakkars">Chakkars</button>
+                <button class="filter-btn" data-category="rockets">Rockets</button>
+            </div>
+
+            <div class="product-table-container">
+                <table class="product-table">
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Product Name</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="product-list">
+                        <!-- Products injected by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Right Column: Cart Summary (Sticky) -->
+        <aside class="cart-sidebar">
+            <div class="cart-box">
+                <h3><span class="material-icons">shopping_bag</span> Your Order</h3>
+                <div class="cart-summary-details">
+                    <div class="summary-row">
+                        <span>Total Items:</span>
+                        <span id="cart-count">0</span>
+                    </div>
+                    <div class="summary-row total-row">
+                        <span>Grand Total:</span>
+                        <span id="cart-total">₹0</span>
+                    </div>
+                </div>
+                <div class="min-order-msg">
+                    <span class="material-icons">info</span> Minimum Order: ₹3000
+                </div>
+                <button class="btn btn-primary btn-block" id="open-checkout-btn">Submit Enquiry</button>
+                <p class="disclaimer">* Prices are subject to change</p>
+            </div>
+        </aside>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h4>Vino Crackers</h4>
+                <p>Premium quality fireworks for your special celebrations. Directly from Sivakasi.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p><span class="material-icons">phone</span> +91 98765 43210</p>
+                <p><span class="material-icons">email</span> sales@vinocrackers.co.in</p>
+                <p><span class="material-icons">location_on</span> Sivakasi, Tamil Nadu</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Vino Crackers. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <span class="material-icons">keyboard_arrow_up</span>
+    </button>
+
+
+
+    <!-- Checkout Modal -->
+    <div id="checkout-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>Enquiry Form</h2>
+            </div>
+            <div class="modal-body">
+                <form id="enquiry-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" required placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" required placeholder="Your Phone Number" pattern="[0-9]{10}">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message (Optional)</label>
+                        <textarea id="message" rows="3" placeholder="Any specific requirements?"></textarea>
+                    </div>
+                    <div class="checkout-summary">
+                        <p>Total Estimate: <strong id="modal-total">₹0</strong></p>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Send Enquiry</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
